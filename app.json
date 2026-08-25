@@ -7,12 +7,14 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "dark",
     "scheme": "fib4",
+    "primaryColor": "#0E1012",
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "in.drraskar.fib4",
       "buildNumber": "1",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "CFBundleDisplayName": "FIB-4"
       }
     },
     "android": {
@@ -28,6 +30,9 @@
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#0E1012"
+    },
+    "extra": {
+      "owner": "drvivekonomics-dev"
     },
     "web": {
       "favicon": "./assets/favicon.png"
