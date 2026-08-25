@@ -35,8 +35,8 @@ npx eas submit --platform ios
 npx eas submit --platform android
 ```
 
-- iOS bundle ID: `in.drraskar.fib4`
-- Android package: `in.drraskar.fib4`
+- iOS bundle ID: `in.metahealth360.fib4`
+- Android package: `in.metahealth360.fib4`
 - Start Play on the **internal testing** track, then promote.
 
 Store screenshots (1320×2868, 1080×1920, 2064×2752, feature 1024×500) are generated into the web app `public/store/` kit.

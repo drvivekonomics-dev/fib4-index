@@ -8,7 +8,7 @@ Paste these fields. Screenshots live in `store/` (iPhone 6.9″ 1320×2868, Play
 |---|---|
 | Name | FIB-4 METAHEALTH360 |
 | Home screen | FIB-4 |
-| Bundle / package | `in.drraskar.fib4` |
+| Bundle / package | `in.metahealth360.fib4` |
 | SKU | `fib4-metahealth360` |
 | Version | 1.0.0 |
 | Category | Medical · Reference |
