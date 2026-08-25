@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "FIB-4",
+    "slug": "fib4-index",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "fib4",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "in.drraskar.fib4",
+      "buildNumber": "1",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "in.drraskar.fib4",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "backgroundColor": "#0E1012",
+        "foregroundImage": "./assets/icon.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0E1012"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
