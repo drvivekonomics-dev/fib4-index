@@ -1,4 +1,4 @@
-# Privacy policy — FIB-4
+# Privacy policy — FIB-4 METAHEALTH360
 
 Last updated: 25 August 2026
 
@@ -24,7 +24,7 @@ If you tap Share, the operating system share sheet sends only the text you chose
 
 ## Deleting data
 
-Clear saved scores in Saved or More. Uninstalling the app removes everything stored by FIB-4.
+Clear saved scores in Saved or More. Uninstalling the app removes everything stored by FIB-4 METAHEALTH360.
 
 ## Medical use
 

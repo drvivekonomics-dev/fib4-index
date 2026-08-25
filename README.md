@@ -1,4 +1,4 @@
-# FIB-4 — iOS & Android
+# FIB-4 METAHEALTH360 — iOS & Android
 
 Native Expo app for the FIB-4 liver fibrosis index. MASLD (age-adjusted) and viral hepatitis cut-offs, platelet units ×10⁹/L / μL / lakh, on-device history, share as a clinical note.
 
@@ -16,21 +16,20 @@ npx expo start
 
 3. Scan the QR code — Camera on iPhone, Expo Go on Android.
 
-## Store builds (TestFlight + Play)
+## Submit to App Store + Play Store
 
-Needs an [Expo](https://expo.dev) account, Apple Developer ($99/yr), and Google Play Console.
+You need:
+
+1. [Apple Developer Program](https://developer.apple.com/programs/) — $99 / year
+2. [Google Play Console](https://play.google.com/console/) — $25 once
+3. An [Expo](https://expo.dev/signup) account to build IPA / AAB
+
+Listing copy, review notes, age rating, and Data safety answers: **STORE.md**. Privacy text: **PRIVACY.md** (host it, paste the URL in both consoles).
 
 ```sh
 npm install
 npx eas login
-npx eas build:configure
-npx eas build --platform ios --profile preview
-npx eas build --platform android --profile preview
-```
-
-Production:
-
-```sh
+npx eas init
 npx eas build --platform all --profile production
 npx eas submit --platform ios
 npx eas submit --platform android
@@ -38,10 +37,7 @@ npx eas submit --platform android
 
 - iOS bundle ID: `in.drraskar.fib4`
 - Android package: `in.drraskar.fib4`
-
-Change those in `app.json` before the first store listing if you want a MetaHealth360 identifier instead.
-
-Store listing copy lives in `STORE.md`. Privacy text lives in `PRIVACY.md` (host it, then paste the URL into App Store Connect / Play Console).
+- Start Play on the **internal testing** track, then promote.
 
 ## Screens
 
@@ -51,11 +47,3 @@ Store listing copy lives in `STORE.md`. Privacy text lives in `PRIVACY.md` (host
 - **More** — default protocol and platelet unit, privacy, about
 
 First launch is a clinical disclaimer. Defaults persist on the phone.
-
-## Icons
-
-`assets/icon.png` should be 1024×1024. If missing after clone:
-
-```sh
-python3 scripts/make-icon.py
-```
