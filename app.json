@@ -11,7 +11,6 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "in.metahealth360.fib4",
-      "buildNumber": "1",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "CFBundleDisplayName": "FIB-4"
@@ -43,7 +42,10 @@
       "backgroundColor": "#0E1012"
     },
     "extra": {
-      "owner": "drvivekonomics-dev"
+      "eas": {
+        "projectId": "b944d16c-f5e9-4e82-b14d-b12f713c4457"
+      },
+      "owner": "vivekonomics1886"
     },
     "web": {
       "favicon": "./assets/favicon.png"
