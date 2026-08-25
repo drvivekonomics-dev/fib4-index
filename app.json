@@ -42,7 +42,6 @@
       "resizeMode": "contain",
       "backgroundColor": "#0E1012"
     },
-    "plugins": ["expo-haptics"],
     "extra": {
       "owner": "drvivekonomics-dev"
     },
