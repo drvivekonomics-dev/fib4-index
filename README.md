@@ -41,7 +41,25 @@ npx eas submit --platform android
 
 Store screenshots (1320×2868, 1080×1920, 2064×2752, feature 1024×500) are generated into the web app `public/store/` kit.
 
-## Screens
+## TestFlight (iOS)
+
+Use the **production** profile (App Store signing). Do not use preview — that is ad-hoc, not TestFlight.
+
+1. Register bundle ID `in.metahealth360.fib4` on the **MetaHealth360** team.
+2. Create the iOS app in App Store Connect with that bundle ID.
+3. On a computer, in this folder:
+
+```sh
+npm install
+npx eas login
+npx eas init
+npx testflight
+```
+
+`npx testflight` builds a store IPA and uploads it to App Store Connect. After ~10–15 minutes it appears under TestFlight → Internal Testing.
+
+Or from [expo.dev](https://expo.dev): create project `fib4-index`, connect this GitHub repo, **Production** iOS build, then **Submit**.
+
 
 - **Score** — live FIB-4, warnings, next step, share, save, optional initials
 - **Saved** — on-device history; tap to reopen; delete one or clear all
