@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Alert, Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { Segmented } from "../components/Segmented";
 import { APP_VERSION, DISCLAIMER, type PlateletUnit, type Protocol } from "../lib/fib4";
 import { persistSettings, type AppSettings } from "../lib/settings";
@@ -93,7 +93,17 @@ export function SettingsScreen({
 
       <View style={styles.card}>
         <Text style={styles.kicker}>About</Text>
-        <Text style={styles.brand}>FIB-4</Text>
+        <View style={styles.lockup}>
+          <Image
+            source={require("../../assets/icon.png")}
+            style={styles.lockupImg}
+            accessibilityLabel=""
+          />
+          <View>
+            <Text style={styles.brandKicker}>METAHEALTH360</Text>
+            <Text style={styles.brand}>FIB-4</Text>
+          </View>
+        </View>
         <Text style={styles.body}>Version {APP_VERSION}</Text>
         <Text style={[styles.body, styles.bodySpaced]}>{DISCLAIMER}</Text>
       </View>
@@ -128,4 +138,13 @@ const styles = StyleSheet.create({
   body: { color: colors.muted, fontSize: 14, lineHeight: 21 },
   bodySpaced: { marginTop: 4 },
   brand: { color: colors.fg, fontSize: 24, fontWeight: "600" },
+  lockup: { flexDirection: "row", alignItems: "center", gap: 12 },
+  lockupImg: { width: 48, height: 48, borderRadius: 10 },
+  brandKicker: {
+    color: colors.accent,
+    fontSize: 11,
+    fontWeight: "600",
+    letterSpacing: 1.4,
+    textTransform: "uppercase",
+  },
 });

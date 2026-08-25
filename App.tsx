@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { ImageBackground, Pressable, StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as Haptics from "expo-haptics";
@@ -114,34 +114,43 @@ export default function App() {
 
 function Onboarding({ onAccept }: { onAccept: () => void }) {
   return (
-    <View style={styles.onboard}>
-      <View>
-        <Text style={styles.kicker}>Liver fibrosis</Text>
-        <Text style={styles.brand}>FIB-4</Text>
-        <Text style={styles.lede}>
-          Four routine labs. One index. Age-adjusted MASLD and viral hepatitis
-          cut-offs for clinic use.
-        </Text>
-        <View style={styles.points}>
-          <Text style={styles.pointTitle}>On this phone</Text>
-          <Text style={styles.pointBody}>
-            Age, AST, ALT, and platelets never leave the device. No account.
+    <ImageBackground
+      source={require("./assets/liver-hero.jpg")}
+      style={styles.onboard}
+      imageStyle={styles.heroFill}
+      accessibilityLabel="Healthy human liver — FIB-4 METAHEALTH360"
+    >
+      <View style={styles.heroShade} />
+      <View style={styles.onboardBody}>
+        <View>
+          <Text style={styles.kicker}>METAHEALTH360</Text>
+          <Text style={styles.brand}>FIB-4</Text>
+          <Text style={styles.liverLine}>LIVER HEALTH</Text>
+          <Text style={styles.lede}>
+            Four routine labs. One index. Age-adjusted MASLD and viral hepatitis
+            cut-offs for clinic use.
           </Text>
-          <Text style={[styles.pointTitle, styles.pointSpaced]}>Triage, not diagnosis</Text>
-          <Text style={styles.pointBody}>
-            FIB-4 does not replace elastography, biopsy, or clinical judgement.
-          </Text>
-          <Text style={[styles.pointTitle, styles.pointSpaced]}>For clinicians</Text>
-          <Text style={styles.pointBody}>
-            Use the matching protocol. Switch platelet units instead of converting by
-            hand.
-          </Text>
+          <View style={styles.points}>
+            <Text style={styles.pointTitle}>On this phone</Text>
+            <Text style={styles.pointBody}>
+              Age, AST, ALT, and platelets never leave the device. No account.
+            </Text>
+            <Text style={[styles.pointTitle, styles.pointSpaced]}>Triage, not diagnosis</Text>
+            <Text style={styles.pointBody}>
+              FIB-4 does not replace elastography, biopsy, or clinical judgement.
+            </Text>
+            <Text style={[styles.pointTitle, styles.pointSpaced]}>For clinicians</Text>
+            <Text style={styles.pointBody}>
+              Use the matching protocol. Switch platelet units instead of converting by
+              hand.
+            </Text>
+          </View>
         </View>
+        <Pressable onPress={onAccept} style={styles.accept}>
+          <Text style={styles.acceptText}>I understand</Text>
+        </Pressable>
       </View>
-      <Pressable onPress={onAccept} style={styles.accept}>
-        <Text style={styles.acceptText}>I understand</Text>
-      </Pressable>
-    </View>
+    </ImageBackground>
   );
 }
 
@@ -152,10 +161,20 @@ const styles = StyleSheet.create({
   tabSafe: { backgroundColor: colors.bg },
   onboard: {
     flex: 1,
+    backgroundColor: colors.bg,
+  },
+  heroFill: { resizeMode: "cover" },
+  heroShade: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(14,16,18,0.55)",
+  },
+  onboardBody: {
+    flex: 1,
     paddingHorizontal: 24,
-    paddingTop: 24,
+    paddingTop: 48,
     paddingBottom: 16,
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
+    gap: 8,
   },
   kicker: {
     color: colors.accent,
@@ -164,7 +183,8 @@ const styles = StyleSheet.create({
     letterSpacing: 1.4,
     textTransform: "uppercase",
   },
-  brand: { color: colors.fg, fontSize: 48, fontWeight: "600", marginTop: 10 },
+  brand: { color: colors.fg, fontSize: 48, fontWeight: "600", marginTop: 8 },
+  liverLine: { color: colors.muted, fontSize: 14, marginTop: 4 },
   lede: { color: colors.muted, fontSize: 16, lineHeight: 24, marginTop: 14, maxWidth: 340 },
   points: { marginTop: 36, gap: 4 },
   pointTitle: { color: colors.fg, fontSize: 16, fontWeight: "600" },

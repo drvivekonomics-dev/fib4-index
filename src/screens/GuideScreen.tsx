@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { CutoffCard } from "../components/CutoffCard";
 import {
   CUTOFF_GUIDES,
@@ -17,6 +17,13 @@ export function GuideScreen() {
         FIB-4 estimates the likelihood of advanced liver fibrosis from four routine
         values. Triage only — not a diagnosis.
       </Text>
+
+      <Image
+        source={require("../../assets/liver-banner.jpg")}
+        style={styles.banner}
+        resizeMode="cover"
+        accessibilityLabel="Liver health"
+      />
 
       <View style={styles.card}>
         <Text style={styles.kicker}>Formula</Text>
@@ -62,6 +69,7 @@ const styles = StyleSheet.create({
   scroll: { padding: 16, paddingBottom: 40, gap: 10 },
   h1: { color: colors.fg, fontSize: 32, fontWeight: "600" },
   lede: { color: colors.muted, fontSize: 14, lineHeight: 21, marginBottom: 6 },
+  banner: { width: "100%", height: 160, borderRadius: radius.lg },
   card: {
     backgroundColor: colors.surface,
     borderRadius: radius.lg,

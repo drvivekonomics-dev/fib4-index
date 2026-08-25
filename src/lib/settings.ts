@@ -1,7 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import type { PlateletUnit, Protocol } from "./fib4";
 
-const KEY = "fib4.settings.v1";
+const KEY = "fib4.settings.v2";
 
 export interface AppSettings {
   protocol: Protocol;

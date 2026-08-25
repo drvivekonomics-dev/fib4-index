@@ -150,7 +150,7 @@ export function formatClinicalNote(
     ? `${PROTOCOL_LABEL[result.protocol]} · age ≥ 65`
     : PROTOCOL_LABEL[result.protocol];
   const lines = [
-    "FIB-4 liver fibrosis index",
+    "FIB-4 METAHEALTH360 — liver fibrosis index",
     label?.trim() ? `Label: ${label.trim()}` : null,
     `Score: ${formatScore(result.score)} — ${result.label}`,
     `Protocol: ${protocolLine}`,

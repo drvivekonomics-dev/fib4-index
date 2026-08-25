@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  Image,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -129,7 +130,7 @@ export function CalculateScreen({
     if (!labs || !result) return;
     await Share.share({
       message: formatClinicalNote(labs, result, label),
-      title: "FIB-4",
+      title: "FIB-4 METAHEALTH360",
     });
     setCopied(true);
     setTimeout(() => setCopied(false), 1400);
@@ -165,8 +166,17 @@ export function CalculateScreen({
         contentContainerStyle={styles.scroll}
         keyboardShouldPersistTaps="handled"
       >
-        <Text style={styles.kicker}>Liver fibrosis</Text>
-        <Text style={styles.h1}>FIB-4</Text>
+        <View style={styles.lockup}>
+          <Image
+            source={require("../../assets/icon.png")}
+            style={styles.lockupImg}
+            accessibilityLabel=""
+          />
+          <View>
+            <Text style={styles.kicker}>METAHEALTH360</Text>
+            <Text style={styles.h1}>FIB-4</Text>
+          </View>
+        </View>
 
         <Segmented
           value={protocol}
@@ -358,6 +368,8 @@ const styles = StyleSheet.create({
     letterSpacing: 1.4,
     textTransform: "uppercase",
   },
+  lockup: { flexDirection: "row", alignItems: "center", gap: 12 },
+  lockupImg: { width: 56, height: 56, borderRadius: 12 },
   h1: { color: colors.fg, fontSize: 36, fontWeight: "600" },
   card: {
     backgroundColor: colors.surface,
